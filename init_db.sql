@@ -1,7 +1,7 @@
 CREATE TABLE users (
    	id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(320) UNIQUE,
-    passhash VARCHAR(32),
+    passhash VARCHAR(255),
     urole INT
 );
 CREATE TABLE workshops (
@@ -13,7 +13,7 @@ CREATE TABLE workshops (
     max_participants INT DEFAULT -1,
     sponsor VARCHAR(255) DEFAULT 'none',
     visibility INT,
-    extra_text VARCHAR(3200) DEFAULT '',
+    extra_text TEXT DEFAULT '',
     extra_text_visibility INT DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -29,7 +29,7 @@ CREATE TABLE participations (
     user_id INT,
     approved INT DEFAULT 0,
     pname VARCHAR(255),
-    notes VARCHAR(3200) DEFAULT '',
+    notes TEXT DEFAULT '',
     FOREIGN KEY (workshop_id) REFERENCES workshops(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -49,9 +49,9 @@ CREATE TABLE session_tokens (
 CREATE TABLE invites ( -- these are generic invites, not tied to specific users
     id INT PRIMARY KEY AUTO_INCREMENT,
     workshop_id INT,
-    code VARCHAR(6),
+    code VARCHAR(6) UNIQUE,
     uses_left INT DEFAULT 1,
-    FOREIGN KEY (workshop_id) REFERENCES workshops(id),
+    FOREIGN KEY (workshop_id) REFERENCES workshops(id)
 );
 
 CREATE TABLE claimed_invites ( -- these are invites that have been claimed by specific users
