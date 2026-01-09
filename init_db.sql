@@ -11,10 +11,7 @@ CREATE TABLE workshops (
     wdate INT DEFAULT -1,
     wlocation VARCHAR(255) DEFAULT '',
     max_participants INT DEFAULT -1,
-    sponsor VARCHAR(255) DEFAULT 'none',
     visibility INT,
-    extra_text TEXT,
-    extra_text_visibility INT DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 CREATE TABLE files (
@@ -33,23 +30,10 @@ CREATE TABLE participations (
     FOREIGN KEY (workshop_id) REFERENCES workshops(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
-CREATE TABLE email_codes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    code VARCHAR(255),
-    user_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-CREATE TABLE session_tokens (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    token VARCHAR(64),
-    user_id INT,
-    expiry INT,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
 CREATE TABLE invites ( -- these are generic invites, not tied to specific users
     id INT PRIMARY KEY AUTO_INCREMENT,
     workshop_id INT,
-    code VARCHAR(6) UNIQUE,
+    code VARCHAR(20) UNIQUE,
     uses_left INT DEFAULT 1,
     FOREIGN KEY (workshop_id) REFERENCES workshops(id)
 );
