@@ -13,7 +13,7 @@ CREATE TABLE workshops (
     max_participants INT DEFAULT -1,
     sponsor VARCHAR(255) DEFAULT 'none',
     visibility INT,
-    extra_text TEXT DEFAULT '',
+    extra_text TEXT,
     extra_text_visibility INT DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -29,7 +29,7 @@ CREATE TABLE participations (
     user_id INT,
     approved INT DEFAULT 0,
     pname VARCHAR(255),
-    notes TEXT DEFAULT '',
+    notes TEXT,
     FOREIGN KEY (workshop_id) REFERENCES workshops(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
