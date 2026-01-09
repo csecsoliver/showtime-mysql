@@ -2,7 +2,7 @@ CREATE TABLE users (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(320) UNIQUE,
     passhash VARCHAR(32),
-    role INT
+    urole INT
 );
 CREATE TABLE workshops (
     id INT PRIMARY KEY AUTO_INCREMENT,
