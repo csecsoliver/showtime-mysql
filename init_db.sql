@@ -58,6 +58,8 @@ CREATE TABLE claimed_invites ( -- these are invites that have been claimed by sp
     id INT PRIMARY KEY AUTO_INCREMENT,
     workshop_id INT,
     user_id INT,
+    invite_id INT,
     FOREIGN KEY (workshop_id) REFERENCES workshops(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (invite_id) REFERENCES invites(id)
 );
