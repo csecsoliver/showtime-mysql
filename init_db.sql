@@ -1,3 +1,6 @@
+CREATE DATABASE showtime_mysql;
+USE showtime_mysql;
+
 CREATE TABLE users (
    	id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(320) UNIQUE,
