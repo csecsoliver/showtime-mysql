@@ -14,22 +14,22 @@ INSERT INTO users (email, passhash, urole) VALUES
 ('papp.istvan@szulo.hu', '$2b$12$1C7F4ElGhIkJmLnM0PqQrT4UkEqFrGoTnXlB8GiNiKkDtOkFrGiJkL', 10);
 
 -- Insert dummy workshops (children's workshops at schools)
-INSERT INTO workshops (user_id, created_at, wdate, wlocation, max_participants, sponsor, visibility, extra_text, extra_text_visibility) VALUES
-(1, 1704067200, 1737878400, 'Petőfi Sándor Általános Iskola, 12-es terem', 25, 'Petőfi Iskola Szülői Munkaközösség', 1, 'A bejárat melleti csengőt kell megnyomni', 1),
-(2, 1704153600, 1738483200, 'Arany János Gimnázium, Díszterem', 40, 'Városi Művészeti Alapítvány', 1, '', 0),
-(1, 1704240000, 1739088000, 'Kossuth Lajos Iskola, Tornaterem', 30, 'Kossuth Iskolai Alapítvány', 1, '', 0),
-(2, 1704326400, 1739692800, 'Vörösmarty Mihály Általános, Kémia labor', 20, 'STEM Oktatási Alap', 1, '', 0),
-(1, 1704412800, 1740297600, 'Kodály Zoltán Zeneiskola, Zeneterem', 18, 'Kodály Zeneiskola', 1, 'A hátsó bejáratnál lehet bemenni', 1),
-(2, 1704499200, 1740902400, 'Móra Ferenc Általános Iskola, Rajzterem', 22, 'Helyi Művészek Egyesülete', 1, '', 0),
-(1, 1704585600, 1741507200, 'Apáczai Csere János Gimnázium, Informatika terem', 25, 'Digitális Oktatási Kezdeményezés', 1, '', 0),
-(2, 1704672000, 1742112000, 'Radnóti Miklós Iskola, Könyvtár', 30, 'Városi Könyvtár Hálózat', 1, '', 0),
-(1, 1704758400, 1742716800, 'Jókai Mór Általános Iskola, Étterem', 35, 'Egészséges Táplálkozás Program', 1, '', 1),
-(2, 1704844800, 1743321600, 'Eötvös József Általános, Játszótér', 40, 'Ifjúsági Sport Liga', 1, '', 0);
+INSERT INTO workshops (user_id, created_at, wdate, wlocation, max_participants, visibility) VALUES
+(1, UNIX_TIMESTAMP('2025-01-01 00:00:00'), UNIX_TIMESTAMP('2025-11-15 10:00:00'), 'Petőfi Sándor Általános Iskola, 12-es terem', 25, 1),
+(2, UNIX_TIMESTAMP('2025-01-02 00:00:00'), UNIX_TIMESTAMP('2025-11-22 10:00:00'), 'Arany János Gimnázium, Díszterem', 40, 1),
+(1, UNIX_TIMESTAMP('2025-01-03 00:00:00'), UNIX_TIMESTAMP('2026-02-01 10:00:00'), 'Kossuth Lajos Iskola, Tornaterem', 30, 1),
+(2, UNIX_TIMESTAMP('2025-01-04 00:00:00'), UNIX_TIMESTAMP('2026-02-08 10:00:00'), 'Vörösmarty Mihály Általános, Kémia labor', 20, 1),
+(1, UNIX_TIMESTAMP('2025-01-05 00:00:00'), UNIX_TIMESTAMP('2026-02-15 10:00:00'), 'Kodály Zoltán Zeneiskola, Zeneterem', 18, 1),
+(2, UNIX_TIMESTAMP('2025-01-06 00:00:00'), UNIX_TIMESTAMP('2026-02-22 10:00:00'), 'Móra Ferenc Általános Iskola, Rajzterem', 22, 1),
+(1, UNIX_TIMESTAMP('2025-01-07 00:00:00'), UNIX_TIMESTAMP('2026-03-01 10:00:00'), 'Apáczai Csere János Gimnázium, Informatika terem', 25, 1),
+(2, UNIX_TIMESTAMP('2025-01-08 00:00:00'), UNIX_TIMESTAMP('2026-03-08 10:00:00'), 'Radnóti Miklós Iskola, Könyvtár', 30, 1),
+(1, UNIX_TIMESTAMP('2025-01-09 00:00:00'), UNIX_TIMESTAMP('2026-03-15 10:00:00'), 'Jókai Mór Általános Iskola, Étterem', 35, 1),
+(2, UNIX_TIMESTAMP('2025-01-10 00:00:00'), UNIX_TIMESTAMP('2026-03-22 10:00:00'), 'Eötvös József Általános, Játszótér', 40, 1);
 
 -- Insert dummy files
 INSERT INTO files (workshop_id, fpath) VALUES
-(1, '/uploads/workshops/1/szuloi_hozzajarulas_2026_01_15.pdf'),
-(2, '/uploads/workshops/2/szuloi_hozzajarulas_2026_01_22.pdf'),
+(1, '/uploads/workshops/1/szuloi_hozzajarulas_2025_11_15.pdf'),
+(2, '/uploads/workshops/2/szuloi_hozzajarulas_2025_11_22.pdf'),
 (3, '/uploads/workshops/3/szuloi_hozzajarulas_2026_02_01.pdf'),
 (4, '/uploads/workshops/4/szuloi_hozzajarulas_2026_02_08.pdf'),
 (5, '/uploads/workshops/5/szuloi_hozzajarulas_2026_02_15.pdf'),
